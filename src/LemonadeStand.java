@@ -106,32 +106,39 @@ public class LemonadeStand {
         }
 
         if(mode==4){
-            double supplyCost;
-            int days, prices;
-            supplyCost=getSupplyCost();
-            printALine("For how many days are you selling this product?");
-            days = keyboard.nextInt();
+            int prices, numberSold;
+            double cost, supplyCost, charge, totalEarned,profit;
             printALine("How many different prices are you testing?");
-            prices = keyboard.nextInt();
-            double[] profits = new double[prices];
+            prices=keyboard.nextInt();
+            printALine("How much does it cost to make one of your product?");
+            cost = keyboard.nextDouble();
+
+            double[] profits = new double[prices+1];
+
             for(int x=1;x<prices+1;x++){
-                double price=0;
-                double totalSales=0;
-                int amountSold=0;
-                printALine("How much will you charge for option "+x+"?");
-                price = keyboard.nextDouble();
-                printALine("How much of your product will you sell?");
-                amountSold = keyboard.nextInt();
-                totalSales=price*amountSold;
-                profits[x] = totalSales-supplyCost;
-                printALine("The profit for option "+x+" is $"+profits[x]);
+                numberSold=0;
+                supplyCost=0;
+                charge=0;
+                totalEarned=0;
+                profit=0;
+                printALine("How much of your product are you going to sell for option "+x+"?");
+                numberSold = keyboard.nextInt();
+                supplyCost = numberSold*cost;
+                printALine("The total cost of the supplies for option "+x+" is $"+supplyCost+"\n\n");
+                printALine("How much are you charging for your product in option "+x+"?");
+                charge = keyboard.nextDouble();
+                totalEarned = numberSold*charge;
+                printALine("For option "+x+", you earned a total of $"+totalEarned);
+                profit = totalEarned-supplyCost;
+                printALine("For option "+x+", your total profit was $"+profit+"\n\n");
+                profits[x] = profit;
             }
-
-            for(int i=1;i<profits.length+1;i++){
-                System.out.println("The total profit for option "+i+" is $"+profits[i]);
+            for(int i=1;i<profits.length;i++){
+                printALine("The total profit for option "+i+" is $"+profits[i]);
             }
-            //Account for different supply prices
+            for(int y=1;y<profits.length;y++){
 
+            }
         }
     }
 }
