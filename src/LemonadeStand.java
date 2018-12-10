@@ -29,7 +29,7 @@ public class LemonadeStand {
         double supplyCost, totalCost;
         totalCost=0;
 
-        printALine("What is the total number of supplies needed?");
+        printALine("\nWhat is the total number of supplies needed?");
         supplyAmount = keyboard.nextInt();
 
         for(int x=1;x<supplyAmount+1;x++) {
@@ -67,12 +67,12 @@ public class LemonadeStand {
     public static void calculationMode(){
         Scanner keyboard = new Scanner(System.in);
         int mode;
-        printALine("Which calculation mode would you like to use? (pick one of the four)\n1. Calculating the total profit from preset costs and sales.\n2. Calculating the total cost of supplies and the total sales, then calculating the profit.\n3. To do option number two, but over a series of days.\n4. To choose the best price to sell a product as.\n");
+        printALine("Which calculation mode would you like to use? (pick one of the four)\n1. Calculating the total profit from preset costs and sales.\n2. Calculating the total cost of supplies and the total sales, then calculating the profit.\n3. To do option number two, but over a series of days.\n4. To choose the best price to sell a product as.");
         mode = keyboard.nextInt();
 
         if(mode==1){
             double supplyCost, salesTotal, profit;
-            printALine("What is the total cost of your supplies?");
+            printALine("\nWhat is the total cost of your supplies?");
             supplyCost=keyboard.nextDouble();
             printALine("How much did you make in sales?");
             salesTotal = keyboard.nextDouble();
@@ -108,7 +108,7 @@ public class LemonadeStand {
         if(mode==4){
             int prices, numberSold;
             double cost, supplyCost, charge, totalEarned,profit;
-            printALine("How many different prices are you testing?");
+            printALine("\nHow many different prices are you testing?");
             prices=keyboard.nextInt();
             printALine("How much does it cost to make one of your product?");
             cost = keyboard.nextDouble();
@@ -116,29 +116,28 @@ public class LemonadeStand {
             double[] profits = new double[prices+1];
 
             for(int x=1;x<prices+1;x++){
-                numberSold=0;
-                supplyCost=0;
-                charge=0;
-                totalEarned=0;
-                profit=0;
                 printALine("How much of your product are you going to sell for option "+x+"?");
                 numberSold = keyboard.nextInt();
                 supplyCost = numberSold*cost;
-                printALine("The total cost of the supplies for option "+x+" is $"+supplyCost+"\n\n");
+                printALine("The total cost of the supplies for option "+x+" is $"+supplyCost);
                 printALine("How much are you charging for your product in option "+x+"?");
                 charge = keyboard.nextDouble();
                 totalEarned = numberSold*charge;
                 printALine("For option "+x+", you earned a total of $"+totalEarned);
                 profit = totalEarned-supplyCost;
-                printALine("For option "+x+", your total profit was $"+profit+"\n\n");
+                printALine("For option "+x+", your total profit was $"+profit);
                 profits[x] = profit;
             }
             for(int i=1;i<profits.length;i++){
                 printALine("The total profit for option "+i+" is $"+profits[i]);
             }
-            for(int y=1;y<profits.length;y++){
-
+            for(int y=1;y<profits.length-1;y++){
+                if(profits[y]>profits[y+1]){
+                    profits[y+1]=profits[y];
+                }
             }
+            System.out.println("\nThe largest profit was $"+profits[profits.length-1]);
+
         }
     }
 }
