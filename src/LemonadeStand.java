@@ -78,6 +78,7 @@ public class LemonadeStand {
             salesTotal = keyboard.nextDouble();
 
             profit = salesTotal-supplyCost;
+            profit = roundProfit(profit);
             System.out.println("Your total profit was $"+profit);
         }
 
@@ -92,6 +93,7 @@ public class LemonadeStand {
             salesTotal=price*amountSold;
 
             profit=salesTotal-supplyCost;
+            profit = roundProfit(profit);
             System.out.println("Your total profit was $"+profit);
         }
 
@@ -102,6 +104,7 @@ public class LemonadeStand {
             moneyEarned = getMoneyEarned();
 
             profit = moneyEarned - totalCost;
+            profit = roundProfit(profit);
             System.out.println("\nYour total profit was $" + profit);
         }
 
@@ -125,6 +128,7 @@ public class LemonadeStand {
                 totalEarned = numberSold*charge;
                 printALine("For option "+x+", you earned a total of $"+totalEarned);
                 profit = totalEarned-supplyCost;
+                profit = roundProfit(profit);
                 printALine("For option "+x+", your total profit was $"+profit);
                 profits[x] = profit;
             }
@@ -139,5 +143,12 @@ public class LemonadeStand {
             System.out.println("\nThe largest profit was $"+profits[profits.length-1]);
 
         }
+    }
+
+    public static double roundProfit(double profit){
+        double roundedNumber;
+        roundedNumber = Math.round(profit*100);
+        roundedNumber = roundedNumber/100;
+        return roundedNumber;
     }
 }
