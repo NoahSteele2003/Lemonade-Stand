@@ -8,8 +8,11 @@ public class LemonadeStand {
 
         printALine("Welcome to profit calculator!");
         while(response.equals("yes")) {
+            int mode;
+            printALine("Which calculation mode would you like to use? (pick one of the four)\n1. Calculating the total profit from preset costs and sales.\n2. Calculating the total cost of supplies and the total sales, then calculating the profit.\n3. To do option number two, but over a series of days.\n4. To choose the best price to sell a product as.");
+            mode = keyboard.nextInt();
 
-            calculationMode();
+            calculationMode(mode);
             printALine("\nWould you like to calculate another profit?");
             response = keyboard.next();
         }
@@ -39,6 +42,7 @@ public class LemonadeStand {
             amountBought = keyboard.nextInt();
             totalCost += supplyCost*amountBought;
         }
+        totalCost=roundProfit(totalCost);
         System.out.println("The total cost of your supplies is $"+totalCost+"\n");
         return totalCost;
     }
@@ -60,15 +64,13 @@ public class LemonadeStand {
             moneyEarned += price * amountSold;
 
         }
+        moneyEarned=roundProfit(moneyEarned);
         System.out.println("You earned a total of $" + moneyEarned);
         return moneyEarned;
     }
 
-    public static void calculationMode(){
+    public static void calculationMode(int mode){
         Scanner keyboard = new Scanner(System.in);
-        int mode;
-        printALine("Which calculation mode would you like to use? (pick one of the four)\n1. Calculating the total profit from preset costs and sales.\n2. Calculating the total cost of supplies and the total sales, then calculating the profit.\n3. To do option number two, but over a series of days.\n4. To choose the best price to sell a product as.");
-        mode = keyboard.nextInt();
 
         if(mode==1){
             double supplyCost, salesTotal, profit;
@@ -91,6 +93,8 @@ public class LemonadeStand {
             printALine("How much of your product did you sell?");
             amountSold=keyboard.nextInt();
             salesTotal=price*amountSold;
+            salesTotal=roundProfit(salesTotal);
+            printALine("You earned a total of $ "+salesTotal);
 
             profit=salesTotal-supplyCost;
             profit = roundProfit(profit);
