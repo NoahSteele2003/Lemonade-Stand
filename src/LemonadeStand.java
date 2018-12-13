@@ -94,7 +94,7 @@ public class LemonadeStand {
             amountSold=keyboard.nextInt();
             salesTotal=price*amountSold;
             salesTotal=roundProfit(salesTotal);
-            printALine("You earned a total of $ "+salesTotal);
+            printALine("You earned a total of $"+salesTotal);
 
             profit=salesTotal-supplyCost;
             profit = roundProfit(profit);
