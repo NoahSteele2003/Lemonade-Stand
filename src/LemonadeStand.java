@@ -14,9 +14,20 @@ public class LemonadeStand {
 
             calculationMode(mode);
             printALine("\nWould you like to calculate another profit?");
-            response = keyboard.next();
+            response = keyboard.next().toLowerCase();
         }
-        printALine("Have a nice day!");
+        while(!response.equals("yes")){
+            if(response.equals("no")){
+                printALine("Have a nice day!");
+                break;
+            }
+            else if(!response.equals("yes")||!response.equals("no")){
+                printALine("Make sure you typed the correct thing.");
+                printALine("\nWould you like to calculate another profit?");
+                response = keyboard.next().toLowerCase();
+            }
+        }
+
 
 
 
@@ -115,15 +126,18 @@ public class LemonadeStand {
         if(mode==4){
             int prices, numberSold;
             double cost, supplyCost, charge, totalEarned,profit;
+            String option;
+            option ="";
             printALine("\nHow many different prices are you testing?");
             prices=keyboard.nextInt();
             printALine("How much does it cost to make one of your product?");
             cost = keyboard.nextDouble();
 
             double[] profits = new double[prices+1];
+            double[] options = new double[prices+1];
 
             for(int x=1;x<prices+1;x++){
-                printALine("How much of your product are you going to sell for option "+x+"?");
+                printALine("\nHow much of your product are you going to sell for option "+x+"?");
                 numberSold = keyboard.nextInt();
                 supplyCost = numberSold*cost;
                 printALine("The total cost of the supplies for option "+x+" is $"+supplyCost);
@@ -132,10 +146,10 @@ public class LemonadeStand {
                 totalEarned = numberSold*charge;
                 printALine("For option "+x+", you earned a total of $"+totalEarned);
                 profit = totalEarned-supplyCost;
-                profit = roundProfit(profit);
-                printALine("For option "+x+", your total profit was $"+profit);
+                //profit = roundProfit(profit);
+                printALine("For option "+x+", your total profit was $"+profit+"\n");
                 profits[x] = profit;
-            }
+                options[x] = profit;}
             for(int i=1;i<profits.length;i++){
                 printALine("The total profit for option "+i+" is $"+profits[i]);
             }
@@ -144,7 +158,12 @@ public class LemonadeStand {
                     profits[y+1]=profits[y];
                 }
             }
-            System.out.println("\nThe largest profit was $"+profits[profits.length-1]);
+            for(int z=1;z<options.length;z++){
+                if (options[z]==profits[profits.length-1]){
+                    option = "option "+z;
+                }
+            }
+            System.out.println("\nThe largest profit was "+option+" with $"+profits[profits.length-1]);
 
         }
     }

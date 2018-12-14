@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d654aff-7991-4c75-a303-8950b4077243" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lemonade-Stand/LemonadeStand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lemonade-Stand/LemonadeStand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LemonadeStand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LemonadeStand.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,8 +19,12 @@
       <file leaf-file-name="LemonadeStand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LemonadeStand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-589">
-              <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+            <state relative-caret-position="785">
+              <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+              <folding>
+                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1284#1285#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,6 +63,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -74,7 +81,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -193,6 +199,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/LemonadeStand.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+          <folding>
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LemonadeStand.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
         </state>
@@ -235,8 +252,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LemonadeStand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-589">
-          <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+        <state relative-caret-position="785">
+          <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+          <folding>
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
