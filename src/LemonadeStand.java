@@ -21,14 +21,12 @@ public class LemonadeStand {
                 printALine("Have a nice day!");
                 break;
             }
-            else if(!response.equals("yes")||!response.equals("no")){
+            else if(!response.equals("no")){
                 printALine("Make sure you typed the correct thing.");
                 printALine("\nWould you like to calculate another profit?");
                 response = keyboard.next().toLowerCase();
             }
         }
-
-
 
 
     }
@@ -146,7 +144,7 @@ public class LemonadeStand {
                 totalEarned = numberSold*charge;
                 printALine("For option "+x+", you earned a total of $"+totalEarned);
                 profit = totalEarned-supplyCost;
-                //profit = roundProfit(profit);
+                profit = roundProfit(profit);
                 printALine("For option "+x+", your total profit was $"+profit+"\n");
                 profits[x] = profit;
                 options[x] = profit;}
